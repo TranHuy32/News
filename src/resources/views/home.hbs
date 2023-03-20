@@ -27,7 +27,7 @@
                 <ul class="list-post">
                     {{#each newses}}
                     <li>
-                        <a href="" class="post-thump">
+                        <a href="/newses/{{this.slug}}" class="post-thump">
                             <img src="{{this.image}}" alt="{{this.name}}">
                         </a>
                         <div class="more-info">
@@ -50,7 +50,7 @@
     <!-- End content  -->
     <div id="sidebar">
         <a href="" class="ads">
-            <img src="/img/ads.png" alt="">
+            <img id="ads-image" src="/img/ads.png" alt="">
         </a>
         <div class="box top-topic">
             <div class="box-head">

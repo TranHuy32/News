@@ -1,5 +1,5 @@
 
-const Course = require('../models/News');
+const News = require('../models/News');
 const { mutipleMongooseToObject } = require('../../util/mongoose')
 
 class SiteController {
@@ -17,8 +17,14 @@ class SiteController {
     //             })
     //         })
     // }
-    index(req, res) {
-        res.render('home');
+    index(req, res, next) {
+        News.find({})
+            .then(newses => {
+                res.render('home', {
+                    newses: mutipleMongooseToObject(newses)
+                });
+            })
+            .catch(next);
     }
 }
 module.exports = new SiteController();

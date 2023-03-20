@@ -6,8 +6,8 @@ class SiteController {
 
     //[GET] /newsws/:slug
     async show(req, res) {
-        const course = await Course.findOne({ slug: req.params.slug })
-        res.render('newses/show', { course: mongooseToObject(course) })
+        const news = await News.findOne({ slug: req.params.slug })
+        res.render('newses/show', { news: mongooseToObject(news) })
     }
     //[GET] /newses/create
     create(req, res, next) {
