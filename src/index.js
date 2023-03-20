@@ -10,8 +10,6 @@ var bodyParser = require('body-parser')
 const route = require('./routes');
 const db = require('./config/db')
 
-//connect to DB
-db.connect()
 
 //connect to DB
 db.connect()
@@ -40,6 +38,7 @@ app.engine(
 );
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
+
 
 // Route init
 route(app);

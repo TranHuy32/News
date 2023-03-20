@@ -1,0 +1,376 @@
+/* 
+Từ tổng quan đến chi tiết
+Từ ngoài vào trong
+Từ sau ra trước
+từ trên xuống dưới
+từ trái sang phải */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px auto;
+    /* để dựng layout cho cái dưới lên ngang hàng */
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+/* ===========HEADER========== */
+
+#header {
+    background: #23282d;
+    padding-top: 27px;
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+}
+
+form#search {
+    position: relative;
+}
+
+form#search input {
+    background: #131619;
+    width: 248px;
+    border: none;
+    outline: none;
+    padding: 9px 42px 9px 15px;
+    color: #909090;
+
+}
+
+form#search button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #a2a1a1;
+    padding: 9px 12px;
+    top: 0px;
+    right: 0px;
+}
+
+form#search ::placeholder {
+    color: #909090;
+}
+
+nav {
+    margin-top: 7px;
+    /* độ rộng flex 100% */
+    flex: 100%;
+    border-right: 10px solid #ff2d2d;
+}
+
+ul#main-menu li a {
+    padding: 6px 20px;
+    color: #eeeeee;
+    /* cho display block thf mới tác động được vào từng phần tử a của cái này  */
+    display: block;
+
+
+}
+
+ul#main-menu li:first-child a {
+    padding-left: 0px;
+}
+
+/* tác động vào thẻ a không tác động vào li để cho bấm ngoài viền cũng vào link */
+ul#main-menu li:hover a,
+ul#main-menu li.active a {
+    color: #4db2ec;
+    text-decoration: none;
+}
+
+/* li hover tác động vào a  */
+
+/* ===================== FEARTURED POST ===================== */
+
+#wp-featured-post {
+    margin-bottom: 20px;
+}
+
+/* display: inline block cho n thu lại  */
+
+
+.box .box-head h3 {
+    display: inline-block;
+    color: #eee;
+    background-color: #23282d;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 3px 15px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.box .box-body {
+    padding-top: 30px;
+}
+
+.box.featured-post .box-body {
+    padding-bottom: 30px;
+    border: 1px solid #dadada;
+}
+
+ul.list-featured-post li {
+    flex: 360px 0 1;
+}
+
+ul.list-featured-post li .post-thump {
+    display: block;
+    overflow: hidden;
+}
+
+ul.list-featured-post li .post-thump {
+    display: block;
+    overflow: hidden;
+}
+
+ul.list-featured-post li .post-thump img {
+    transition: all 0.25s;
+}
+
+ul.list-featured-post li .post-thump img:hover {
+    transform: scale(1.05);
+}
+
+ul.list-featured-post li a.post-title {
+    color: #5f5f5f;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    display: block;
+}
+
+/* ======================= WP-CONTENT =============== */
+#content {
+    flex: 765px;
+    padding-right: 15px;
+}
+
+#sidebar {
+    flex: 375px;
+    padding-left: 15px;
+}
+
+/* ---------------------CONTENT----------------------- */
+
+.box.new-post .box-head {
+    border-bottom: 2px solid #4db2ec;
+}
+
+.box.new-post .box-head h3 {
+    background-color: #4db2ec;
+
+}
+
+ul.list-post li {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+ul.list-post li .post-thump {
+    display: block;
+    padding-right: 15px;
+    flex: 280px;
+}
+
+ul.list-post li .more-info {
+    padding-left: 15px;
+}
+
+ul.list-post li .more-info .post-tittle {
+    color: #111111;
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+ul.list-post li:hover .more-info .post-tittle {
+    color: #4db2ec;
+    text-decoration: none;
+}
+
+ul.list-post li .more-info .post-published {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 0px;
+}
+
+ul.list-post li .more-info .post-author {
+    color: #111111;
+}
+
+ul.list-post li .more-info .post-date {
+    color: #aaaa;
+}
+
+ul.list-post li .more-info .post-excerpt {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 0;
+}
+
+/* -------------------- SIDEBAR --------------------- */
+#sidebar a.ads {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.box.box.top-topic .box-head h3 {
+    background-color: #ff2d2d;
+
+}
+
+.box.top-topic .box-head {
+    border-bottom: 2px solid #ff2d2d;
+}
+
+ul.list-topic li a {
+    position: relative;
+    color: #212121;
+    font-size: 16px;
+    display: block;
+    padding: 6px 0px;
+
+}
+
+ul.list-topic li a span.num-post {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+}
+
+ul.list-topic li:hover a {
+    color: #ff2d2d;
+    text-decoration: none;
+}
+
+/* ======================== FOOTER ===================== */
+#footer {
+    background: #2e2f30;
+    padding-top: 52px;
+    padding-bottom: 75px;
+    color: #f6f6f6;
+}
+
+#footer .box .box-head h3 {
+    background: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 18px;
+}
+
+#footer .box.logo-footer {
+    width: 280px;
+    padding-right: 15px;
+
+}
+
+#footer .box.about-us {
+    width: 680px;
+    padding-right: 180px;
+    padding-left: 15px;
+
+}
+
+#footer .box.about-us a {
+    color: #4db2ec;
+}
+
+#footer .box.logo-footer .box-head {
+    visibility: hidden;
+    /* ẩn 1 phần tử nma kh mất không gian  */
+}
+
+#footer .box.follow-us {
+    width: 280px;
+    padding-right: 15px;
+
+}
+
+#footer .box .box-body {
+    padding-top: 40px;
+    font-size: 14px;
+}
+
+ul.list-social li {
+    margin-left: 15px;
+
+}
+
+ul.list-social li:first-child {
+    margin-left: 0px;
+}
+
+ul.list-social li a {
+    background: #434648;
+    padding: 5px 12px;
+    color: #eee;
+    display: block;
+}
+
+ul.list-social li:hover a {
+    color: #4db2ec;
+}
+
+
+/* ============================= COPYRIGHT ================ */
+#wp-copyright {
+    background: #222527;
+    color: #fff;
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+}
+
+#wp-copyright .copyright {
+    margin-bottom: 0px;
+    font-size: 14px;
+
+}
+
+ul#footer-menu li a {
+    font-size: 14px;
+    color: #f3f3f3;
+    padding: 0px 13px;
+    display: block;
+}
+
+ul#footer-menu li:hover a {
+    color: #4db2ec;
+    text-decoration: none;
+
+}
+
+ul#footer-menu li a:last-child {
+    padding-right: 0px;
+}
+
+/* h1 {
+    color: pink;
+} */
+
+.card-course-item {
+    margin-top: 16px;
+}
+
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.checkbox-select-all-options {
+    width: 120px;
+    margin: 0 16px;
+}
