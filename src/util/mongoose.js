@@ -1,8 +1,14 @@
-module.exports = {
-    mutipleMongooseToObject: function (mongooses) {
-        return mongooses.map(mongoose => mongoose.toObject());
+const { Sequelize } = require('sequelize');
+
+
+var sequelize = new Sequelize('new_schema', 'root', '030201', {
+    host: 'localhost',
+    dialect: 'mysql',
+
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
     },
-    mongooseToObject: function (mongoose) {
-        return mongoose ? mongoose.toObject() : mongoose;
-    }
-}
+
+});

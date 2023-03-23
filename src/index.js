@@ -4,15 +4,17 @@ const morgan = require('morgan');
 const methodOverride = require('method-override')
 const handlebars = require('express-handlebars');
 const app = express();
-const port = 8888;
+const port = 3000;
 var bodyParser = require('body-parser')
+const Sequelize = require('sequelize');
 
 const route = require('./routes');
 const db = require('./config/db')
 
 
+
 //connect to DB
-db.connect()
+// db.connect()
 
 app.use(express.static(path.join(__dirname, 'public')));
 // parse application/x-www-form-urlencoded
