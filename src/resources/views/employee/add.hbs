@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee</title>
+</head>
+
+<body>
+    <br>
+    <h3>Add Employee</h3>
+    <form method="post" action="/employee/add">
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td><input type="text" name="id" required></td>
+            </tr>
+            <tr>
+                <th>Name:</th>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><input type="text" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Job:</th>
+                <td>
+                    <select type="text" name="job_id" required>
+                        {{#each jobList}}
+                        <option value="{{this.job_id}}">{{this.job_id}}</option>
+                        {{/each}}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

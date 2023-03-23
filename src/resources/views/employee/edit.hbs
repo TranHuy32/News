@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee</title>
+</head>
+
+<body>
+    <br>
+    <h3>Edit Employee</h3>
+    <form method="post" action="/employee/edit">
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td>
+                    <input type="text" name="id" value="{{empEdit.id}}" required readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>Name:</th>
+                <td>
+                    <input type="text" name="name" value="{{empEdit.name}}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>
+                    <input type="text" name="email" value="{{empEdit.email}}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Job:</th>
+                <td>
+                    <input type="text" name="job_id" value="{{empEdit.job_id}}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

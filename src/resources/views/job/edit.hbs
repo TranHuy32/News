@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job</title>
+</head>
+
+<body>
+    <br>
+    <h3>Edit Job</h3>
+    <form method="post" action="/job/edit">
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td>
+                    <input type="text" name="job_id" value="{{jobEdit.job_id}}" required readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>Job Title:</th>
+                <td>
+                    <input type="text" name="job_title" value="{{jobEdit.job_title}}" required>
+                </td>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
