@@ -31,9 +31,9 @@ var sequelize = new Sequelize('nodejs_test', 'root', '030201', {
 
 employee.init({
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.STRING, allowNull: false },
-    email: { type: DataTypes.STRING, allowNull: false },
-    job_id: { type: DataTypes.STRING, allowNull: false },
+    name: { type: DataTypes.STRING, allowNull: true },
+    email: { type: DataTypes.STRING, allowNull: true },
+    job_id: { type: DataTypes.STRING, allowNull: true },
 
 }, { sequelize, modelName: 'employee' });
 

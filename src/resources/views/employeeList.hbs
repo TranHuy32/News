@@ -24,14 +24,14 @@
         </tr>
         {{#each employeeList}}
         <tr>
-            <td>{{this.id}}</td>
-            <td>{{this.name}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.job.title}}</td>
+            <td>{{this.dataValues.id}}</td>
+            <td>{{this.dataValues.name}}</td>
+            <td>{{this.dataValues.email}}</td>
+            <td>{{this.dataValues.job_title}}</td>
             <td>
-                <a href="/employee/edit/{{this.id}}">Edit</a>
+                <a href="/employee/edit/{{this.dataValues.id}}">Edit</a>
                 <a type="text">|</a>
-                <a href="/employee/delete/{{this.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="/employee/delete/{{this.dataValues.id}}" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
         </tr>
 

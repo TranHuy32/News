@@ -8,6 +8,7 @@ var job = require('../models/job');
 router.get('/', async (req, res) => {
     try {
         const jobList = await job.findAll();
+        console.log(jobList)
         res.render('jobList', { jobList });
     } catch (err) {
         console.log(err);
