@@ -44,7 +44,7 @@ exports.deleteEmployees = async function (id) {
     }
 }
 
-exports.updateEmployees = async function (id) {
+exports.editEmployees = async function (id) {
     try {
         const employeeEdit = await employee.findOne({
             where: {
@@ -56,5 +56,26 @@ exports.updateEmployees = async function (id) {
         console.error(err);
         throw err;
 
+    }
+}
+
+exports.updateEmployees = async function (id, name, email, job_id) {
+
+    try {
+        const employeeUpdate = await employee.update({
+            id,
+            name,
+            email,
+            job_id
+
+        }, {
+            where: {
+                id
+            }
+        });
+        return employeeUpdate
+    } catch (err) {
+        console.error(err);
+        throw err;
     }
 }

@@ -5,7 +5,7 @@ exports.getJobs = async function (req, res, next) {
         const jobList = await job.findAll({});
         return jobList
     } catch (err) {
-        // Log Errors
+
         console.error(err);
         throw err;
     }
@@ -13,12 +13,10 @@ exports.getJobs = async function (req, res, next) {
 exports.addJobs = async function (job_id, job_title) {
     try {
         const newJob = await job.create({
-            id,
-            name,
-            email,
-            job_id
+            job_id,
+            job_title
         });
-        return newEmployee
+        return newJob
     } catch (err) {
         console.error(err);
         throw err;
@@ -26,11 +24,11 @@ exports.addJobs = async function (job_id, job_title) {
     }
 }
 
-exports.deleteEmployees = async function (req, res) {
+exports.deleteJobs = async function (job_id) {
     try {
-        const destroyList = await employee.destroy({
+        const destroyList = await job.destroy({
             where: {
-                id: req.params.id
+                job_id
             }
         })
         return destroyList
@@ -38,5 +36,39 @@ exports.deleteEmployees = async function (req, res) {
         console.error(err);
         throw err;
 
+    }
+}
+
+exports.editJobs = async function (job_id) {
+    try {
+        const jobEdit = await job.findOne({
+            where: {
+                job_id
+            }
+        });
+        return jobEdit
+    } catch (err) {
+        console.error(err);
+        throw err;
+
+    }
+}
+
+exports.updateJobs = async function (job_id, job_title) {
+
+    try {
+        const jobUpdate = await job.update({
+            job_id,
+            job_title
+
+        }, {
+            where: {
+                job_id
+            }
+        });
+        return jobUpdate
+    } catch (err) {
+        console.error(err);
+        throw err;
     }
 }

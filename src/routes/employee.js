@@ -15,6 +15,6 @@ module.exports = router;
 router.get('/delete/:id', EmployeeController.getDeleteEmployee)
 
 // // UPDATE
-// router.get('/edit/:id', EmployeeController.GetUpdateEmployee)
-// router.post('/edit', EmployeeController.PostUpdateEmployee)
-// module.exports = router;
+router.get('/edit/:id', EmployeeController.getUpdateEmployee)
+router.post('/edit', EmployeeController.postUpdateEmployee)
+module.exports = router;

@@ -23,9 +23,9 @@
             <td>{{this.dataValues.job_id}}</td>
             <td>{{this.dataValues.job_title}}</td>
             <td>
-                <a href="/job/edit/{{this.job_id}}">Edit</a>
+                <a href="/job/edit/{{this.dataValues.job_id}}">Edit</a>
                 <a type="text">|</a>
-                <a href="/job/delete/{{this.job_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="/job/delete/{{this.dataValues.job_id}}" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
         </tr>
         {{/each}}

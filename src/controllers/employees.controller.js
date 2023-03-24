@@ -11,7 +11,9 @@ var JobService = require('../services/jobs.service')
 exports.getEmployee = async function (req, res, next) {
     try {
         var employeeList = await EmployeeService.getEmployees()
-        res.render('employeeList', { employeeList });
+        var jobList = await JobService.getJobs()
+
+        res.render('employeeList', { employeeList, jobList });
     } catch (err) {
         return res.status(400).json({ status: 400, message: err.message });
     }
@@ -56,31 +58,23 @@ exports.getDeleteEmployee = async function (req, res, next) {
 exports.getUpdateEmployee = async function (req, res, next) {
     try {
         const id = req.params.id
+        const employeeEdit = await EmployeeService.editEmployees(id)
         res.render('employee/edit', { employeeEdit });
     } catch (err) {
         console.log(err);
     }
 };
 
-
-router.post('/edit', async (req, res) => {
+exports.postUpdateEmployee = async function (req, res, next) {
     try {
-        let { employee_id, employee_title } = req.body;
-        console.log(employee_id)
-        await employee.update({
-            employee_id,
-            employee_title
-        },
-            {
-                where: {
-                    employee_id: employee_id
-                }
-            })
+        let { id, name, email, job_id } = req.body;
+        const employeeUpdate = await EmployeeService.updateEmployees(id, name, email, job_id)
+
         res.redirect('/employee')
+
     } catch (err) {
         console.log(err)
     }
+}
 
-// });
 
-// module.exports = router;
