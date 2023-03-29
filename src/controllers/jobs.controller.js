@@ -10,9 +10,9 @@ var JobService = require('../services/jobs.service')
 
 exports.getJob = async function (req, res, next) {
     try {
-        var jobList = await JobService.getJobs()
-
-        res.render('jobList', { jobList });
+        const jobList = await JobService.getJobs()
+        res.status(201).json(jobList)
+        // res.render('jobList', { jobList });
     } catch (err) {
         return res.status(400).json({ status: 400, message: err.message });
     }

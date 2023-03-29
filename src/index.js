@@ -7,9 +7,7 @@ var bodyParser = require('body-parser');
 const port = 3000;
 const handlebars = require('express-handlebars');
 var methodOverride = require('method-override');
-// var cookieParser = require('cookie-parser');
-// var logger = require('morgan');
-
+const auth = require('./middleware/authentication')
 
 
 // test connection
@@ -33,8 +31,11 @@ const connection = mysql.createConnection({
 var employee = require('./routes/employee');
 var job = require('./routes/job');
 var home = require('./routes/home');
+var user = require('./routes/user');
+
 
 var app = express();
+
 
 // view engine setup
 // app.use(express.static(path.join(__dirname, 'public')));
@@ -52,12 +53,11 @@ app.use(methodOverride('_method'))
 
 // request 
 app.use('/', home);
-app.use('/job', job);
-app.use('/job/add', job);
-app.use('/job/edit/:id', job);
-app.use('/employee', employee);
-app.use('/employee/add', employee);
-app.use('/employee/edit/:id', employee);
+app.use('/job',auth, job);
+app.use('/employee',auth, employee);
+app.use('/user', user);
+
+
 
 
 // template engine

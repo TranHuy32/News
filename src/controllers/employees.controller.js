@@ -33,7 +33,9 @@ exports.postAddEmployee = async function (req, res, next) {
     try {
         let { id, name, email, job_id } = req.body;
         const newEmployee = await EmployeeService.addEmployees(id, name, email, job_id)
-        res.redirect('/employee');
+        res.status(201).json(newEmployee)
+
+        // res.redirect('/employee');
     } catch (err) {
         console.log(err);
     }
